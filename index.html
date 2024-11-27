@@ -11,6 +11,7 @@
   </head>
   <body>
     <script defer src="02-functions/script.js"></script>
+    <script defer src="02-functions/modal.js"></script>
 
     <div id="app">
       <header>
@@ -45,7 +46,7 @@
 
           <!-- start calculator -->
           <section class="calculator">
-            <h2 class="tac">Culculator</h2>
+            <h2 class="tac">Calculator</h2>
             <div class="d-flex d-flex_aic d-flex_jcc mb-2">
               <input type="number" class="calculator__first-number">
             </div>
@@ -63,12 +64,37 @@
               <b class="calculator__result mr-4">0</b>
             </div>
           </section>
+
+          <button class="btn open-modal-btn">Изменить данные пользователя</button>
+        </main>
+      </div>
           <!-- end calculator -->
 
+          <div class="modal" id="modal">
+            <div class="modal-content">
+              <span class="close-modal">&times;</span>
+              <h2>Ваши данные</h2>
+              <p>Введите свои данные ниже:</p>
+              <label for="first-name" class="modal-label">Введите ваше имя:</label>
+              <input type="text" id="first-name" class="modal-input" placeholder="Имя">
+
+              <label for="last-name" class="modal-label">Введите вашу фамилию:</label>
+              <input type="text" id="last-name" class="modal-input" placeholder="Фамилия">
+
+              <button class="close-modal-btn">Закрыть</button>
+              <button class="confirm-btn">Подтвердить</button>
+            </div>
+          </div>
+
           <!-- start selct -->
-          <section style="display: none">
+          <section style="display: none;">
             <select name="city" id="country-select">
-              <option value="">-- Выберите страну --</option>
+              <option value="">-- Выберите Страну --</option>
+              <option value="">-- Беларусь --</option>
+              <option value="">-- Украина --</option>
+              <option value="">-- Россия --</option>
+              <option value="">-- Литва --</option>
+              <option value="">-- Япония --</option>
             </select>
   
             <div class="wrapper-phone-input d-flex_inline d-flex_aic">
