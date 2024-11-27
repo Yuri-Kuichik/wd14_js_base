@@ -6,8 +6,12 @@
 
     <title>Base JS app</title>
     <link rel="stylesheet" href="src/styles/main.css">
+    <link rel="stylesheet" href="src/styles/d-flex.css">
+    <link rel="stylesheet" href="src/styles/dentins.css">
   </head>
   <body>
+    <script defer src="02-functions/script.js"></script>
+
     <div id="app">
       <header>
         <div class="container header-section">
@@ -23,7 +27,56 @@
 
       <div class="main-wrapper">
         <main class="container">
-          <h1 class="title">ECMAScript is cool!</h1>
+          <h1 class="title">Введение в функции JavaScript</h1>
+
+          <!-- start counter -->
+          <section  class="counter mb-6">
+            <h2 class="tac">Counter</h2>
+            <div class="tac mb-2">
+              <span>Value: </span>
+              <b class="counter__value mr-4">0</b>
+            </div>
+            <div class="d-flex d-flex_aic d-flex_jcc">
+              <button class="btn mr-4 decrease-counter">-</button>
+              <button class="btn increase-counter">+</button>
+            </div>
+          </section>
+          <!-- end counter -->
+
+          <!-- start calculator -->
+          <section class="calculator">
+            <h2 class="tac">Culculator</h2>
+            <div class="d-flex d-flex_aic d-flex_jcc mb-2">
+              <input type="number" class="calculator__first-number">
+            </div>
+            <div class="d-flex d-flex_aic d-flex_jcc mb-2">
+              <button class="btn mr-4 calculator__calc-btn" onClick="">+</button>
+              <button class="btn mr-4 calculator__calc-btn">-</button>
+              <button class="btn mr-4 calculator__calc-btn">/</button>
+              <button class="btn calculator__calc-btn">*</button>
+            </div>
+            <div class="d-flex d-flex_aic d-flex_jcc mb-2">
+              <input type="number" class="calculator__second-number">
+            </div>
+            <div class="tac mb-2">
+              <span>Result: </span>
+              <b class="calculator__result mr-4">0</b>
+            </div>
+          </section>
+          <!-- end calculator -->
+
+          <!-- start selct -->
+          <section style="display: none">
+            <select name="city" id="country-select">
+              <option value="">-- Выберите страну --</option>
+            </select>
+  
+            <div class="wrapper-phone-input d-flex_inline d-flex_aic">
+              <span class="code-phone"></span>
+              <input type="text" />
+            </div>
+          </section>
+          <!-- end selct -->
         </main>
       </div>
 
@@ -35,12 +88,8 @@
       </footer>
     </div>
 
-    <script>
-      function isNullType(value) {
-        return typeof(value) === 'object' && !Boolean(value)
-      }
-    </script>
-    
-    <script src="02-functions/script.js"></script>
+    <script src="02-functions/counter.js"></script>
+    <script src="02-functions/calculator.js"></script>
+
   </body>
 </html>
