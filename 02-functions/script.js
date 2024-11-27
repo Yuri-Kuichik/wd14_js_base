@@ -42,3 +42,13 @@ function setUserInitials() {
 }
 setUserInitials();
 // end user initials
+
+let userdataRewrite = document.querySelector('.userdata__rewrite')
+userdataRewrite.addEventListener('click', () => {
+  alert(`Привет ${userData['firsName']} ${userData['lastName']}. Вижу ты пришёл сюда, чтобы снова поменять своё имя. Давай я попробую помочь тебе`)
+  userData['firsName'] = prompt('Введите ваше имя: ')
+  userData['lastName'] = prompt('Введите вашу фамилию: ')
+  setUserInitials()
+  alert(`Отлично ${userData['firsName']} ${userData['lastName']}. Я изменил твои данные. Честно говоря, они тебе совершенно не подходят XD!`)
+})
+
