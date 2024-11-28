@@ -1,3 +1,32 @@
+const codesCountrties = [
+  {
+    BY: '+375',
+    iso: '112',
+    name: 'Belarus',
+    code: '+375',
+  },
+  {
+    GE: '',
+    iso: '268',
+    name: 'Georgia',
+    code: '+995',
+  },
+  {
+    KZ: '',
+    iso: '398',
+    name: 'Kazakhstan',
+    code: '+997',
+  },
+  {
+    RU: '',
+    iso: '643',
+    name: 'Russia',
+    code: '+7',
+  }
+
+]
+
+
 let selectedCountryISO = '';
 
 function addSelectListCountries() {
@@ -13,10 +42,10 @@ function addSelectListCountries() {
   }
 }
 
-function createOptionElement(text, value) {
+function createOptionElement(text, val) {
   const optionEl = document.createElement('option');
   optionEl.innerHTML = text;
-  optionEl.value = value;
+  optionEl.value = val;
 
   return optionEl;
 }

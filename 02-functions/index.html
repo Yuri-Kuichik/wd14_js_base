@@ -10,8 +10,6 @@
     <link rel="stylesheet" href="src/styles/dentins.css">
   </head>
   <body>
-    <script defer src="02-functions/script.js"></script>
-
     <div id="app">
       <header>
         <div class="container header-section">
@@ -67,13 +65,6 @@
 
           <!-- start selct -->
           <section>
-            <!-- <select name="select mb-4">
-              <option value="BY">Беларусь</option>
-              <option value="value2" selected>Россия</option>
-              <option value="value3">Украина</option>
-              <option value="value3">Грузия</option>
-            </select> -->
-  
             <select name="city" id="country-select">
               <option value="">-- Выберите страну --</option>
             </select>
@@ -84,21 +75,6 @@
             </div>
           </section>
           <!-- end selct -->
-
-          <div class="todo-list-template"></div>
-
-          <div class="todo-list"></div>
-          <img src="src/images/logo.png" alt="">
-
-          <template id="todo-item">
-            <div class="d-flex">
-              <input type="checkbox">
-              <div class="todo-list__text d-flex">Text</div>
-              <button><img src="src/images/logo.png" alt=""></button>
-              <button><img src="src/images/logo.png" alt=""></button>
-            </div>
-          </template>
-
         </main>
       </div>
 
@@ -110,47 +86,10 @@
       </footer>
     </div>
 
+    <script defer src="02-functions/script.js"></script>
+    <script defer src="02-functions/select-country.js"></script>
     <script src="02-functions/counter.js"></script>
     <script src="02-functions/calculator.js"></script>
-    <script defer src="02-functions/select-country.js"></script>
-
-    <script>
-      const todoListData = [
-        {
-          text: 'Do homework!',
-          completed: false,
-        },
-        {
-          text: 'Read JS book!',
-          completed: false,
-        }
-      ]
-
-      let elTodoListTemp = document.querySelector('.todo-list-template')
-      const templateTodoItem = document.querySelector('#todo-item')
-
-      let elTodoList = document.querySelector('.todo-list');
-
-      todoListData.forEach( (item) => {
-        // Клонируем содержимое тега <template>
-      const todoItem = templateTodoItem.content.cloneNode(true)
-
-      // Находим тег <li> и помещаем текст внутрь
-        todoItem.querySelector('.todo-list__text').textContent = 
-
-      // Вставляем склонированный контент на страницу
-      elTodoListTemp.append(todoItem)
-
-
-
-  elTodoList.innerHTML += `<div class="d-flex"> 
-    <input type="checkbox" value="${item.completed}" />
-    <div style="flex-grow: 1;">${item.text}! </div>
-    <button> <img src="src/images/logo.png" alt=""> </button>
-    <button> <img src="src/images/logo.png" alt=""> </button>
-  </div>`   
-})
-    </script>
 
   </body>
 </html>
