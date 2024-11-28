@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="zalupa">
+    <div class="bg-slate-800 w-screen h-screen absolute inset-0 flex flex-col">
+        <header>
+            <div class="bg-slate-200 w-full h-16 flex justify-end items-center">
+                <div class="w-10 h-10 rounded-full bg-slate-700 mx-4 flex justify-center items-center">
+                    <p id="initials" class="text-white text-xl m-0 p-0">DZ</p>
+                </div>
+            </div>
+        </header>
+
+        <main class="flex justify-center items-center w-full h-full flex-col">
+            <div class="flex flex-row justify-center items-center gap-2 mb-10">
+                <select name="countries" id="countries"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-32 p-2.5">
+                </select>
+                <label for="prefix" class="hidden">Country code</label>
+                <input type="text" id="prefix" aria-label="prefix"
+                    class="bg-gray-100 border border-gray-300 text-gray-900 text-sm text-center rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-16 p-2.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    value="" disabled>
+                <label for="number" class="hidden mb-2 text-sm font-medium text-gray-900 dark:text-white">Default
+                    input</label>
+                <input type="text" id="number"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            </div>
+            <button id="modalButtonInBody" type="button"
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Change
+                name</button>
+
+
+            <!-- Main modal -->
+            <div id="authentication-modal" tabindex="-1" aria-hidden="true"
+                class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full h-[calc(100%-1rem)] max-h-full flex">
+                <div class="relative p-4 w-full max-w-md max-h-full">
+                    <!-- Modal content -->
+                    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                        <!-- Modal body -->
+                        <div class="p-4 md:p-5">
+                            <div class="space-y-4">
+                                <div>
+                                    <label for="firstName"
+                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First
+                                        Name</label>
+                                    <input type="text" name="firstName" id="firstName"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                        placeholder="Ivan" />
+                                </div>
+                                <div>
+                                    <label for="lastName"
+                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Last
+                                        Name</label>
+                                    <input type="text" name="lastName" id="lastName" placeholder="Ivanov"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" />
+                                </div>
+                                <button id="submitButton"
+                                    class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Change</button>
+                                <button id="modalButtonInWindow"
+                                    class="w-full text-blue-800 bg-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center border-solid border-2">Cancle</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>
