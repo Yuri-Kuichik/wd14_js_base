@@ -10,8 +10,6 @@
     <link rel="stylesheet" href="src/styles/dentins.css">
   </head>
   <body>
-    <script defer src="02-functions/script.js"></script>
-
     <div id="app">
       <header>
         <div class="container header-section">
@@ -27,7 +25,7 @@
 
       <div class="main-wrapper">
         <main class="container">
-          <h1 class="title">Введение в JavaScript</h1>
+          <h1 class="title">Массивы в JavaScript</h1>
 
           <div class="todo-list-template"></div>
 
@@ -54,6 +52,43 @@
       </footer>
     </div>
 
+    <script>
+      const todoListData = [
+        {
+          text: 'Do homework!',
+          completed: false,
+        },
+        {
+          text: 'Read JS book!',
+          completed: false,
+        }
+      ]
+
+      let elTodoListTemp = document.querySelector('.todo-list-template')
+      const templateTodoItem = document.querySelector('#todo-item')
+
+      let elTodoList = document.querySelector('.todo-list');
+
+      todoListData.forEach( (item) => {
+        // Клонируем содержимое тега <template>
+      const todoItem = templateTodoItem.content.cloneNode(true)
+
+      // Находим тег <li> и помещаем текст внутрь
+        todoItem.querySelector('.todo-list__text').textContent = 
+
+      // Вставляем склонированный контент на страницу
+      elTodoListTemp.append(todoItem)
+
+
+
+  elTodoList.innerHTML += `<div class="d-flex"> 
+    <input type="checkbox" value="${item.completed}" />
+    <div style="flex-grow: 1;">${item.text}! </div>
+    <button> <img src="src/images/logo.png" alt=""> </button>
+    <button> <img src="src/images/logo.png" alt=""> </button>
+  </div>`   
+})
+    </script>
 
   </body>
 </html>
