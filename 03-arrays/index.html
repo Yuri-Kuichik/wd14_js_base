@@ -5,90 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Base JS app</title>
-    <link rel="stylesheet" href="src/styles/main.css">
-    <link rel="stylesheet" href="src/styles/d-flex.css">
-    <link rel="stylesheet" href="src/styles/dentins.css">
+    <link rel="stylesheet" href="../src/styles/main.css">
+    <link rel="stylesheet" href="../src/styles/d-flex.css">
+    <link rel="stylesheet" href="../src/styles/dentins.css">
   </head>
   <body>
     <div id="app">
       <header>
         <div class="container header-section">
-          <image class="header-section__logo" src="src/images/logo.png" />
+          <image class="header-section__logo" src="../src/images/logo.png" />
           <nav>
             <span class="link-page" onClick="document.location.reload()">Home</span>
             <span class="link-page" onClick="document.location.reload()">Contacts</span>
             <span class="link-page" onClick="document.location.reload()">About us</span>
           </nav>
-          <div class="header-section__user"></div>
+          <div class="header-section__user">DT</div>
         </div>
       </header>
 
       <div class="main-wrapper">
         <main class="container">
-          <h1 class="title">Массивы в JavaScript</h1>
+          <h1 class="title">Todo List</h1>
 
-          <div class="todo-list-template"></div>
 
-          <div class="todo-list"></div>
-          <img src="src/images/logo.png" alt="">
+          <div class="todo-list">
+            <!-- сюда добавляем шаблоны из js  -->
+          </div>
 
+          <!-- используйте этот шаблон -->
           <template id="todo-item">
             <div class="d-flex">
-              <input type="checkbox">
+              <input type="checkbox" class="todo-list__checkbox">
               <div class="todo-list__text d-flex">Text</div>
-              <button><img src="src/images/logo.png" alt=""></button>
-              <button><img src="src/images/logo.png" alt=""></button>
+              <button><img src="../src/images/edit-icon.svg" alt=""></button>
+              <button><img src="../src/images/delete-icon.svg" alt=""></button>
             </div>
           </template>
-
         </main>
       </div>
 
       <footer>
         <div class="container footer-section">
-          <img src="src/images/tms-logo.svg" alt="TMS logo">
-          <p class="sc-clIzBv fkJTxe">© 2024, TeachMeSkills</p>
+          <img src="../src/images/tms-logo.svg" alt="TMS logo">
+          <p class="tac">© 2024, TeachMeSkills</p>
         </div>
       </footer>
     </div>
 
-    <script>
-      const todoListData = [
-        {
-          text: 'Do homework!',
-          completed: false,
-        },
-        {
-          text: 'Read JS book!',
-          completed: false,
-        }
-      ]
-
-      let elTodoListTemp = document.querySelector('.todo-list-template')
-      const templateTodoItem = document.querySelector('#todo-item')
-
-      let elTodoList = document.querySelector('.todo-list');
-
-      todoListData.forEach( (item) => {
-        // Клонируем содержимое тега <template>
-      const todoItem = templateTodoItem.content.cloneNode(true)
-
-      // Находим тег <li> и помещаем текст внутрь
-        todoItem.querySelector('.todo-list__text').textContent = 
-
-      // Вставляем склонированный контент на страницу
-      elTodoListTemp.append(todoItem)
-
-
-
-  elTodoList.innerHTML += `<div class="d-flex"> 
-    <input type="checkbox" value="${item.completed}" />
-    <div style="flex-grow: 1;">${item.text}! </div>
-    <button> <img src="src/images/logo.png" alt=""> </button>
-    <button> <img src="src/images/logo.png" alt=""> </button>
-  </div>`   
-})
-    </script>
+   <script defer src="scr/todo-list.js"></script>
 
   </body>
 </html>
