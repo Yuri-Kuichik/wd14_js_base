@@ -13,18 +13,13 @@ const todoListData = [
   }
 ]
 
-// находим шаблон в html (template)
+let itemTemplate = document.querySelector("#todo-item");
 
-// находим контейнер в который будем добавлять шаблоны
+let container = document.querySelector(".todo-list");
 
-// Выполняем итерацию по массиву todoListData. По каждой итерации выполняем:
-
-  // Клонируем содержимое тега <template> в переменную
-  // const todoItem = 
-
-  // Находим чекбокс и ставим активен ли он в зависимости от статуса задачи (completed)
-  // todoItem.querySelector()
-  // Находим нужный тег и помещаем текст внутрь
-  // todoItem.querySelector()
-
-  // Вставляем склонированный контент в контейнер
+todoListData.forEach((element) => {
+  let todoItem = itemTemplate.content.cloneNode(true);
+  todoItem.querySelector(".todo-list__checkbox").checked = element.completed;
+  todoItem.querySelector(".todo-list__text").textContent = element.text;
+  container.appendChild(todoItem);
+})
