@@ -31,3 +31,12 @@ todoListData.forEach((e) => {
   // Вставляем склонированный контент в контейнер
   todo_container.appendChild(todoItem)
 })
+
+let todo_edit_buttons = document.querySelectorAll('.todo-list__edit')
+todo_edit_buttons.forEach((button) => {
+  button.addEventListener('click', (e) => {
+    let taskContainer = button.parentElement
+    let taskText = taskContainer.querySelector('.todo-list__text');
+    taskText.textContent = prompt('Введите текст новой задачи: ', taskText.textContent)
+  })
+})
