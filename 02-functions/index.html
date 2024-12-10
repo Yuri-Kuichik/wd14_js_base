@@ -75,6 +75,40 @@
             </div>
           </section>
           <!-- end selct -->
+
+          <!-- start open modal -->
+          <section>
+            <h2 class="titleModal">Изменить инициалы пользователя</h2>
+            <button id="openModalBtn">Изменить данные пользователя</button>
+
+            <div id="myModal">
+              <h3>Введите ваше имя</h3>
+              <input type="text" id="firstName" placeholder="Имя">
+              <h3>Введите вашу фамилию</h3>
+              <input type="text" id="lastName" placeholder="Фамилия">
+              <button id="saveBtn">Сохранить</button>
+            </div>
+          </section>
+          <!-- end open modal -->
+
+          <!-- start phone -->
+          <section>
+            <div class="phone-wrapper">
+              <div class="country-code" id="countryCode">+1</div>
+              <input type="text" id="phoneNumber" class="phone-input" placeholder="Номер телефона" />
+            </div>
+
+            <div>
+              <select id="countrySelect">
+                <option value="+1">США (+1)</option>
+                <option value="+375">Беларусь (+375)</option>
+                <option value="+7">Россия (+7)</option>
+                <option value="+44">Великобритания (+44)</option>
+                <option value="+33">Франция (+33)</option>
+              </select>
+            </div>
+          </section>
+          <!-- end phone -->
         </main>
       </div>
 
