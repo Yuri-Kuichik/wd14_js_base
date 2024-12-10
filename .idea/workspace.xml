@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84ebf3eb-7344-4fea-9fba-0f1814f15ceb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/04-object/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/04-object/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +30,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "ValentinaOnoshko",
+    "git-widget-placeholder": "ValentinaOnoshko-hw2",
     "last_opened_file_path": "C:/Валя/TMS/wd14_js_base",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -62,7 +62,7 @@
       <workItem from="1733825535965" duration="10020000" />
       <workItem from="1733837565792" duration="1237000" />
       <workItem from="1733839549498" duration="53000" />
-      <workItem from="1733858509225" duration="314000" />
+      <workItem from="1733858509225" duration="1983000" />
     </task>
     <servers />
   </component>
