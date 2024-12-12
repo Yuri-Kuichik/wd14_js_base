@@ -162,11 +162,6 @@ input:focus-visible {
   outline: unset;
 }
 
-.counter-section,
-.calculator-section {
-  display: none;;
-}
-
 .code-phone {
   width: 40px;
 }
@@ -174,4 +169,8 @@ input:focus-visible {
 .select-section select {
   padding: 0 4px;
   min-height: 32px;
+}
+
+.hidden {
+  display: none !important;
 }
