@@ -17,6 +17,7 @@ html, body, #app {
   flex-grow: 1;
   padding: 32px;
   background: rgba(0,0,0, .03);
+
 }
 
 main {
@@ -29,6 +30,7 @@ main {
 .container {
   margin: 0 auto;
   max-width: 1280px;
+  position: relative;
 }
 
 .header-section {
@@ -231,4 +233,5 @@ input:focus-visible {
 .confirm-btn:hover {
   background-color: #45a049;
 }
+
 

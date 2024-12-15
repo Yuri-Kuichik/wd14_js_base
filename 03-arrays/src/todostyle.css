@@ -1,0 +1,101 @@
+
+  #todo-container {
+    width: 400px;
+    margin: 50px auto;
+    background: #e9e9e9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 10px;
+  }
+  
+  .d-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .d-flex:last-child {
+    border-bottom: none;
+  }
+  
+  .todo-list__checkbox {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .todo-list__text {
+    flex: 1;
+    font-size: 16px;
+    color: #000000;
+  }
+  
+  .todo-list__text.d-flex {
+    margin-right: 10px;
+  }
+  
+  .todobutton {
+    background-color: #e9e9e9;
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    position: absolute;
+    bottom: 20px; 
+    right: 20px;
+  }
+  
+  button img {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.2s ease;
+  }
+  
+  button img:hover {
+    transform: scale(1.2);
+  }
+  
+  .todo-list__checkbox:checked + .todo-list__text {
+    text-decoration: line-through;
+    color: #aaa;
+  }
+
+  .title{
+    text-transform: uppercase;
+    color: #555;
+  }
+  
+  .hidden {
+    display: none !important;
+    
+  }
+  
+  #modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+    text-align: center;
+  }
+  
+  .modal-buttons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
