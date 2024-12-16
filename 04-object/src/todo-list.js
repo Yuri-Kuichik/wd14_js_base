@@ -83,7 +83,6 @@ todo_edit_buttons.forEach((button) => {
 })
 
 let checkbox_edit_buttons = document.querySelectorAll('.todo-list__checkbox')
-
 checkbox_edit_buttons.forEach((checkbox) => {
   checkbox.addEventListener('click', (e) => {
     let taskContainer = checkbox.parentElement
@@ -93,5 +92,19 @@ checkbox_edit_buttons.forEach((checkbox) => {
         e.text === taskText.textContent);
         foundTask.completed === true ? foundTask.completed = false : foundTask.completed = true;
     localStorage.setItem('todoListData', JSON.stringify(todoList));
+  })
+})
+
+let checkbox_remove_buttons = document.querySelectorAll('.todo-list__remove')
+checkbox_remove_buttons.forEach((button) => {
+  button.addEventListener('click', (e) => {
+    let taskContainer = button.parentElement
+    let taskText = taskContainer.querySelector('.todo-list__text')
+    let todoList = JSON.parse(localStorage.getItem('todoListData')) || []
+    let foundTaskIndex = todoList.findIndex((e) =>
+        e.text === taskText.textContent);
+    todoList.splice(foundTaskIndex, 1)
+    localStorage.setItem('todoListData', JSON.stringify(todoList));
+    taskContainer.remove();
   })
 })
