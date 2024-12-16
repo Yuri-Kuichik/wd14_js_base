@@ -78,8 +78,20 @@ todo_edit_buttons.forEach((button) => {
         alert('Текст задачи не может быть пустым!');
       }
 
+    localStorage.setItem('todoListData', JSON.stringify(todoList));
+  })
+})
 
+let checkbox_edit_buttons = document.querySelectorAll('.todo-list__checkbox')
 
+checkbox_edit_buttons.forEach((checkbox) => {
+  checkbox.addEventListener('click', (e) => {
+    let taskContainer = checkbox.parentElement
+    let taskText = taskContainer.querySelector('.todo-list__text')
+    let todoList = JSON.parse(localStorage.getItem('todoListData')) || []
+    let foundTask = todoList.find((e) =>
+        e.text === taskText.textContent);
+        foundTask.completed === true ? foundTask.completed = false : foundTask.completed = true;
     localStorage.setItem('todoListData', JSON.stringify(todoList));
   })
 })
