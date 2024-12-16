@@ -19,7 +19,7 @@
             <span id="counter-page" class="link-page">Counter</span>
             <span id="calculator-page" class="link-page">Calculator</span>
             <span id="select-page" class="link-page">Select code</span>
-            <span id="" class="link-page">Todo list</span>
+            <span id="todo-page" class="link-page">Todo list</span>
           </nav>
           <div class="header-section__user"></div>
         </div>
@@ -84,8 +84,41 @@
           <!-- end select section -->
 
           <!-- start section Todo list -->
-          <section class="" style="display: none;">
-            <!-- your code -->
+          <section class="todo-page" style="display: none;">
+            <main class="container">
+              <h1 class="title">Todo List</h1>
+
+              <div id="addTaskButton" style="display: flex; justify-content: center;">
+                <button id="addTaskButton" >Add task</button>
+                <!--<ul id="todoList"></ul>-->
+              </div>
+
+              <!-- Модальное окно -->
+              <div id="modal" style="display: none;">
+                <div class="modal-content">
+                  <label for="taskInput">Task:</label>
+                  <input type="text" id="taskInput" class="mb-4"/>
+                  <div class="d-flex d-flex_jcsb">
+                    <button id="addTask">Add</button>
+                    <button id="cancelTask">Cancel</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="todo-list">
+                <!-- сюда добавляем шаблоны из js  -->
+              </div>
+
+              <!-- используйте этот шаблон -->
+              <template id="todo-item">
+                <div class="d-flex">
+                  <input type="checkbox" class="todo-list__checkbox">
+                  <div class="todo-list__text d-flex" style="align-items: center; margin-left: 10px">Text</div>
+                  <button class="todo-list__edit"><img src="../src/images/edit-icon.svg" alt=""></button>
+                  <button class="todo-list__remove"><img src="../src/images/delete-icon.svg" alt=""></button>
+                </div>
+              </template>
+            </main>
           </section>
           <!-- end section Todo list -->
         </main>
@@ -99,8 +132,10 @@
       </footer>
     </div>
 
+    <script defer src="./navigation.js"></script>
     <script defer src="../02-functions/src/counter.js"></script>
     <script defer src="../02-functions/src/calculator.js"></script>
     <script defer src="../02-functions/src/select-country.js"></script>
+    <script defer src="../04-object/src/todo-list.js"></script>
   </body>
 </html>
