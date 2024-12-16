@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../src/styles/main.css">
     <link rel="stylesheet" href="../src/styles/d-flex.css">
     <link rel="stylesheet" href="../src/styles/dentins.css">
+    <link rel="stylesheet" href="../src/styles/modal.css">
   </head>
   <body>
     <div id="app">
@@ -27,6 +28,22 @@
         <main class="container">
           <h1 class="title">Todo List</h1>
 
+          <div id="addTaskButton" style="display: flex; justify-content: center;">
+            <button id="addTaskButton" >Add task</button>
+            <!--<ul id="todoList"></ul>-->
+          </div>
+
+          <!-- Модальное окно -->
+          <div id="modal" style="display: none;">
+            <div class="modal-content">
+              <label for="taskInput">Task:</label>
+              <input type="text" id="taskInput" class="mb-4"/>
+              <div class="d-flex d-flex_jcsb">
+                <button id="addTask">Add</button>
+                <button id="cancelTask">Cancel</button>
+              </div>
+            </div>
+          </div>
 
           <div class="todo-list">
             <!-- сюда добавляем шаблоны из js  -->
