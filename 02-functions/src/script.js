@@ -33,36 +33,69 @@ saveBtn.onclick = function() {
   userData.lastName = lastNameInput.value;
 
   setUserInitials();
-
-  firstNameInput.value = '';
-  lastNameInput.value = '';
-  phoneNumberElement.value = '';
 }
 
 const countryCodeElement = document.getElementById('countryCode');
 const countrySelectElement = document.getElementById('countrySelect');
 const phoneNumberElement = document.getElementById('phoneNumber');
 
-countrySelectElement.addEventListener('change', function() {
-  const selectedCode = countrySelectElement.value;
-  countryCodeElement.innerText = selectedCode;
-  phoneNumberElement.value = '';
+const codesCountrties = [
+  {
+    BY: '+375',
+    iso: '112',
+    name: 'Belarus',
+    code: '+375',
+  },
+
+  {
+    GE: '',
+    iso: '268',
+    name: 'Georgia',
+    code: '+995',
+  },
+  {
+    KZ: '',
+    iso: '398',
+    name: 'Kazakhstan',
+    code: '+997',
+  },
+  {
+    RU: '',
+    iso: '643',
+    name: 'Russia',
+    code: '+7',
+  }
+]
+
+codesCountrties.forEach(country => {
+  const option = document.createElement('option');
+  option.value = country.code;
+  option.textContent = `${country.name} (${country.code})`;
+  countrySelectElement.appendChild(option);
 });
 
-phoneNumberElement.addEventListener('focus', function() {
-  const prefix = countryCodeElement.innerText;
-  const currentValue = phoneNumberElement.value;
+let currentCountryCode = countrySelectElement.value;
+countryCodeElement.innerText = currentCountryCode;
+phoneNumberElement.value = currentCountryCode;
+phoneNumberElement.setSelectionRange(phoneNumberElement.value.length, phoneNumberElement.value.length);
 
-  if (!currentValue.startsWith(prefix)) {
-    phoneNumberElement.value = '';
-  }
+countrySelectElement.addEventListener('change', function() {
+  currentCountryCode = countrySelectElement.value;
+  countryCodeElement.innerText = currentCountryCode;
+  phoneNumberElement.value = currentCountryCode;
+  phoneNumberElement.setSelectionRange(phoneNumberElement.value.length, phoneNumberElement.value.length);
 });
 
 phoneNumberElement.addEventListener('input', function() {
-  const prefix = countryCodeElement.innerText;
-  const inputValue = phoneNumberElement.value.replace(/^(\+?\d*)/, '');
+  const currentValue = phoneNumberElement.value;
 
-  if (!phoneNumberElement.value.startsWith(prefix)) {
-    phoneNumberElement.value = prefix + inputValue;
+  if (!currentValue.startsWith(currentCountryCode)) {
+    phoneNumberElement.value = currentCountryCode;
+  } else {
+    const numberPart = currentValue.slice(currentCountryCode.length);
+    phoneNumberElement.value = currentCountryCode + numberPart;
+    phoneNumberElement.setSelectionRange(phoneNumberElement.value.length, phoneNumberElement.value.length);
   }
+
+  countryCodeElement.innerText = phoneNumberElement.value;
 });
