@@ -42,16 +42,16 @@
             <div class="modal-content">
               <span class="btn-close" id="closeModal">&times;</span>
               <h2>Edit Task</h2>
-              <textarea id="editTaskText" rows="4" cols="50"></textarea>
+              <textarea id="editTaskText" class="edit-task-textarea" rows="4" cols="50"></textarea>
               <button id="saveButton">Save</button>
             </div>
           </div>
 
           <!-- используйте этот шаблон -->
           <template id="todo-item">
-            <div class="d-flex">
+            <div class="todo-list__item">
               <input type="checkbox" class="todo-list__checkbox">
-              <div class="todo-list__text d-flex">Text</div>
+              <div class="todo-list__text">Text</div>
               <button class="todo-list__edit-button"><img src="../src/images/edit-icon.svg" alt=""></button>
               <button><img src="../src/images/delete-icon.svg" alt=""></button>
             </div>

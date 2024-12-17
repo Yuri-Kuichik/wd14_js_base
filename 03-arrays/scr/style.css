@@ -17,15 +17,16 @@
     border-radius: 8px;
 }
 
-.todo-list .d-flex {
+.todo-list__item {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px 0;
     border-bottom: 1px solid #eee;
+    gap: 8px;
 }
 
-.todo-list .d-flex:last-child {
+.todo-list__item:last-child {
     border-bottom: none;
 }
 
@@ -75,7 +76,7 @@ input[type="checkbox"] {
     cursor: pointer;
 }
 
-textarea {
+.edit-task-textarea {
     width: 90%;
     margin-bottom: 20px;
     padding: 10px;
