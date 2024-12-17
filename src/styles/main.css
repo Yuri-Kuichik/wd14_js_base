@@ -85,3 +85,93 @@ footer {
   height: 24px;
   width: auto;
 }
+
+/* .btn {
+  min-width: 30px;
+  padding: 4px 12px;
+} */
+
+button {
+  position: relative;
+    /* font-family: Rubik; */
+    font-size: 14px;
+    line-height: 125%;
+    font-weight: 500;
+    white-space: nowrap;
+    box-sizing: border-box;
+    min-height: 32px;
+    border-radius: 8px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(7, 7, 7);
+    border: 1px solid rgb(118, 119, 124);
+    opacity: 1;
+    /* width: 100%; */
+    cursor: pointer;
+    transition: opacity 0.2s;
+    display: flex
+;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    outline: none;
+    padding-right: 32px;
+    padding-left: 32px;
+}
+
+button:hover {
+  transition: 0.5s;
+  background-color: rgb(255, 232, 128);
+  border: 1px solid rgb(255, 232, 128);
+  color: rgb(7, 7, 7);
+}
+
+input, select {
+  min-height: 32px;
+  border-radius: 8px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(7, 7, 7);
+  border: 1px solid rgb(118, 119, 124);
+  opacity: 1;
+}
+
+input {
+  padding: 0 10px;
+}
+
+select:focus-visible,
+input:focus-visible {
+  border: none;
+  outline: 1px solid rgb(253, 211, 42);
+}
+
+.tac {
+  text-align: center;
+}
+
+
+.wrapper-phone-input {
+  min-height: 32px;
+  padding: 0 4px;
+  border: solid 1px rgb(118, 119, 124);
+  border-radius: 8px;
+}
+
+.wrapper-phone-input input {
+  border: none;
+  outline: unset;
+}
+
+.counter-section,
+.calculator-section {
+  display: none;;
+}
+
+.code-phone {
+  width: 40px;
+}
+
+.select-section select {
+  padding: 0 4px;
+  min-height: 32px;
+}
