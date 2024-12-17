@@ -11,11 +11,14 @@
     <div id="app">
       <header>
         <div class="container header-section">
-          <image class="header-section__logo" src="src/images/logo.png" />
-          <nav>
-            <span class="link-page" onClick="document.location.reload()">Home</span>
-            <span class="link-page" onClick="document.location.reload()">Contacts</span>
-            <span class="link-page" onClick="document.location.reload()">About us</span>
+
+          <image class="header-section__logo" src="../src/images/logo.png" />
+          <nav class="navigation">
+            <span id="home-page" class="link-page">Home</span>
+            <span id="counter-page" class="link-page">Counter</span>
+            <span id="calculator-page" class="link-page">Calculator</span>
+            <span id="select-page" class="link-page">Select code</span>
+            <span id="todo-list-page" class="link-page">Todo list</span>
           </nav>
           <div class="header-section__user"></div>
         </div>
@@ -23,7 +26,73 @@
 
       <div class="main-wrapper">
         <main class="container">
-          <h1 class="title">ECMAScript is cool!</h1>
+          <h1 class="title">Введение в JavaScript</h1>
+
+          <section class="home-page visible">
+            <h2 class="tac">Home page</h2>
+          </section>
+
+          <!-- start counter -->
+          <section class="counter-page counter-section mb-6 hidden">
+            <h2 class="tac">Counter</h2>
+            <div class="tac mb-2">
+              <span>Value: </span>
+              <b class="counter__value mr-4">0</b>
+            </div>
+            <div class="d-flex d-flex_aic d-flex_jcc">
+              <button class="btn mr-4 decrease-counter">-</button>
+              <button class="btn increase-counter">+</button>
+            </div>
+          </section>
+          <!-- end counter -->
+
+          <!-- start calculator -->
+          <section class="calculator-page calculator-section hidden">
+            <h2 class="tac">Culculator</h2>
+            <div class="d-flex d-flex_aic d-flex_jcc mb-2">
+              <input type="number" class="calculator__first-number">
+            </div>
+            <div class="d-flex d-flex_aic d-flex_jcc mb-2">
+              <button class="btn mr-4 calculator__calc-btn" onClick="">+</button>
+              <button class="btn mr-4 calculator__calc-btn">-</button>
+              <button class="btn mr-4 calculator__calc-btn">/</button>
+              <button class="btn calculator__calc-btn">*</button>
+            </div>
+            <div class="d-flex d-flex_aic d-flex_jcc mb-2">
+              <input type="number" class="calculator__second-number">
+            </div>
+            <div class="tac mb-2">
+              <span>Result: </span>
+              <b class="calculator__result mr-4">0</b>
+            </div>
+          </section>
+          <!-- end calculator -->
+
+          <!-- start select section -->
+          <section class="select-page select-section hidden">
+            <h2 class="tac">Select country code</h2>
+
+            <div class="d-flex d-flex_aic d-flex_jcc">
+              <select name="city" id="country-select" class="mr-4"></select>
+
+              <div class="wrapper-phone-input d-flex_inline d-flex_aic mr-2">
+                <input class="code-phone" type="text" disabled/>
+              </div>
+    
+              <div class="wrapper-phone-input d-flex_inline d-flex_aic">
+                <input type="text" />
+              </div>
+            </div>
+          </section>
+          <!-- end select section -->
+
+          <!-- start section Todo list -->
+          <section class="todo-list-page hidden">
+            <!-- your code -->
+            <h2 class="tac">Todo list</h2>
+          </section>
+          <!-- end section Todo list -->
+
         </main>
       </div>
 
@@ -35,13 +104,18 @@
       </footer>
     </div>
 
+
+    <script defer src="../02-functions/src/counter.js"></script>
+    <script defer src="../02-functions/src/calculator.js"></script>
+    <script defer src="../02-functions/src/select-country.js"></script>
+    <script defer src="./page-navigation.js"></script>
+
     <script>
       function isNullType(value) {
         return typeof(value) === 'object' && !Boolean(value)
       }
     </script>
     <script src="script/script.js"></script>
-    
-    <!-- <script src="02-functions/script.js"></script> -->
+   
   </body>
 </html>
