@@ -161,3 +161,16 @@ input:focus-visible {
   border: none;
   outline: unset;
 }
+
+.code-phone {
+  width: 40px;
+}
+
+.select-section select {
+  padding: 0 4px;
+  min-height: 32px;
+}
+
+.hidden {
+  display: none !important;
+}
