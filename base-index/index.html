@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Base JS app</title>
-    <link rel="stylesheet" href="../src/styles/main.css">
-    <link rel="stylesheet" href="../src/styles/d-flex.css">
-    <link rel="stylesheet" href="../src/styles/dentins.css">
+    <link rel="stylesheet" href="src/styles/main.css">
   </head>
   <body>
     <div id="app">
       <header>
         <div class="container header-section">
+
           <image class="header-section__logo" src="../src/images/logo.png" />
           <nav class="navigation">
             <span id="home-page" class="link-page">Home</span>
@@ -93,20 +92,32 @@
             <h2 class="tac">Todo list</h2>
           </section>
           <!-- end section Todo list -->
+
         </main>
       </div>
 
       <footer>
         <div class="container footer-section">
-          <img src="../src/images/tms-logo.svg" alt="TMS logo">
-          <p class="tac">© 2024, TeachMeSkills</p>
+          <img src="src/images/tms-logo.svg" alt="TMS logo">
+          <p class="sc-clIzBv fkJTxe">© 2024, TeachMeSkills</p>
         </div>
       </footer>
     </div>
 
+
     <script defer src="../02-functions/src/counter.js"></script>
     <script defer src="../02-functions/src/calculator.js"></script>
     <script defer src="../02-functions/src/select-country.js"></script>
+
     <script defer src="./navigation.js"></script>
+<!--     <script defer src="./page-navigation.js"></script> -->
+
+    <script>
+      function isNullType(value) {
+        return typeof(value) === 'object' && !Boolean(value)
+      }
+    </script>
+    <script src="script/script.js"></script>
+   
   </body>
 </html>
