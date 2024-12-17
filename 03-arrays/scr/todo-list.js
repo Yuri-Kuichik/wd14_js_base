@@ -13,18 +13,50 @@ const todoListData = [
   }
 ]
 
-// находим шаблон в html (template)
+const todoListContainer = document.querySelector('.todo-list');
 
-// находим контейнер в который будем добавлять шаблоны
+const todoTemplate = document.getElementById('todo-item');
+const editModal = document.getElementById('editModal');
+const closeModal = document.getElementById('closeModal');
+const saveButton = document.getElementById('saveButton');
+const editTaskText = document.getElementById('editTaskText');
+let currentTaskIndex = -1;
 
-// Выполняем итерацию по массиву todoListData. По каждой итерации выполняем:
+function openEditModal(taskIndex) {
+  currentTaskIndex = taskIndex;
+  const task = todoListData[taskIndex];
+  editTaskText.value = task.text;
+  editModal.style.display = "flex";
+}
 
-  // Клонируем содержимое тега <template> в переменную
-  // const todoItem = 
+function closeEditModal() {
+  editModal.style.display = "none";
+}
 
-  // Находим чекбокс и ставим активен ли он в зависимости от статуса задачи (completed)
-  // todoItem.querySelector()
-  // Находим нужный тег и помещаем текст внутрь
-  // todoItem.querySelector()
+closeModal.onclick = closeEditModal;
 
-  // Вставляем склонированный контент в контейнер
+saveButton.onclick = function() {
+  if (currentTaskIndex >= 0) {
+    todoListData[currentTaskIndex].text = editTaskText.value;
+    const taskItem = todoListContainer.children[currentTaskIndex];
+    const textElement = taskItem.querySelector('.todo-list__text');
+    textElement.textContent = editTaskText.value;
+    closeEditModal();
+  }
+};
+
+function renderTodoList() {
+  todoListContainer.innerHTML = '';
+  todoListData.forEach((task, index) => {
+    const todoItem = todoTemplate.content.cloneNode(true);
+    const checkbox = todoItem.querySelector('.todo-list__checkbox');
+    checkbox.checked = task.completed;
+    const textElement = todoItem.querySelector('.todo-list__text');
+    textElement.textContent = task.text;
+    const editButton = todoItem.querySelector('.todo-list__edit-button');
+    editButton.onclick = () => openEditModal(index);
+    todoListContainer.appendChild(todoItem);
+  });
+}
+
+renderTodoList();
