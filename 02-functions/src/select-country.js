@@ -33,28 +33,21 @@ function addSelectListCountries() {
   const selectElement = document.querySelector('#country-select');
   selectElement.addEventListener('change', (e) => {
     selectedCountryISO = e.target.value;
-    setCode(selectedCountryISO)
+    document.querySelector('.code-phone').innerText = codesCountrties.find(el => el.iso === e.target.value).code
   })
 
-  codesCountrties.forEach( (item, index) => {
-    let el = createOptionElement(item.name, item.iso, index)
+  for (let i = 0; i < codesCountrties.length; i++) {
+    let el = createOptionElement(codesCountrties[i].name, codesCountrties[i].iso)
     selectElement.appendChild(el);
-  })
+  }
 }
 
-function createOptionElement(text, val, index) {
+function createOptionElement(text, val) {
   const optionEl = document.createElement('option');
   optionEl.innerHTML = text;
   optionEl.value = val;
-  if(!index) {
-    setCode(val)
-  }
 
   return optionEl;
-}
-
-function setCode(val) {
-  document.querySelector('.code-phone').value = codesCountrties.find(el => el.iso === val).code
 }
 
 addSelectListCountries();
